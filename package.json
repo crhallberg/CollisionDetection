@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "oniguruma": "^7.0.0",
+    "marky-markdown": "^11.3.2"
+  }
+}
