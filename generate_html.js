@@ -15,6 +15,8 @@ fs.readdir("MarkdownFiles", function(err, files) {
     var codeExists = fs.existsSync("CodeExamples/" + name + ".js");
     if (codeExists) {
       code = fs.readFileSync("CodeExamples/" + name + ".js", "utf8").trim();
+    } else {
+        continue;
     }
     console.log(" + " + name, codeExists);
     // console.log(' + ' + files[i]);
