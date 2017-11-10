@@ -35,7 +35,7 @@ function draw() {
 }
 
 // LINE/LINE
-function lineLine(x1, y1, x2, y2, x3, y3, x4, y4) {
+function lineLine(x1,y1,x2,y2, x3,y3,x4,y4) {
     // calculate the distance to intersection point
     var uA = ((x4-x3)*(y1-y3) - (y4-y3)*(x1-x3)) / ((y4-y3)*(x2-x1) - (x4-x3)*(y2-y1));
     var uB = ((x2-x1)*(y1-y3) - (y2-y1)*(x1-x3)) / ((y4-y3)*(x2-x1) - (x4-x3)*(y2-y1));

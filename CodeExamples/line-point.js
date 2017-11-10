@@ -37,7 +37,7 @@ function draw() {
 
 
 // LINE/POINT
-function linePoint(x1, y1, x2, y2, px, py) {
+function linePoint(x1,y1, x2,y2, px,py) {
 
     // get distance from the point to the two ends of the line
     var d1 = dist(px,py, x1,y1);
