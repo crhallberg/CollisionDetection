@@ -110,12 +110,6 @@ function lineCircle(x1,y1,x2,y2, cx,cy,r) {
     var onSegment = linePoint(x1,y1,x2,y2, closestX,closestY);
     if (!onSegment) return false;
 
-    // optionally, draw a circle at the closest point
-    // on the line
-    fill(255,0,0);
-    noStroke();
-    ellipse(closestX, closestY, 20, 20);
-
     // get distance to closest point
     distX = closestX - cx;
     distY = closestY - cy;
