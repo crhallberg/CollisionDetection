@@ -57,12 +57,10 @@ function draw() {
 
 // POLYGON/LINE
 function polyLine(vertices, x1,y1,x2,y2) {
-
     // go through each of the vertices, plus the next
     // vertex in the list
     var next = 0;
     for (var current=0; current<vertices.length; current++) {
-
         // get next vertex in list
         // if we've hit the end, wrap around to 0
         next = current+1;
@@ -91,7 +89,6 @@ function polyLine(vertices, x1,y1,x2,y2) {
 
 // LINE/LINE
 function lineLine(x1,y1,x2,y2, x3,y3,x4,y4) {
-
     // calculate the direction of the lines
     var uA = ((x4-x3)*(y1-y3) - (y4-y3)*(x1-x3)) / ((y4-y3)*(x2-x1) - (x4-x3)*(y2-y1));
     var uB = ((x2-x1)*(y1-y3) - (y2-y1)*(x1-x3)) / ((y4-y3)*(x2-x1) - (x4-x3)*(y2-y1));
