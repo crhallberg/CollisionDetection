@@ -10,9 +10,9 @@ function setup() {
 
     for (var i = 0; i < 50; i++) {
         // 50 of each
-        shapes.push(Circle());
-        shapes.push(Rectangle());
-        shapes.push(Line());
+        shapes.push(new Circle());
+        shapes.push(new Rectangle());
+        shapes.push(new Line());
     }
 }
 
@@ -37,105 +37,98 @@ function draw() {
 /* --- SHAPE OBJECTS --- */
 
 function Circle() {
-    return (function() {
-        var x = random(width);
-        var y = random(-height, height);
-        var r = random(8, 20);
-        var speed = random(0.5, 2);
-        var hit = false;
+    var x = random(width);
+    var y = random(-height, height);
+    var r = random(8, 20);
+    var speed = random(0.5, 2);
+    var hit = false;
 
-        function update() {
-            y += speed;
-            hit = circleCircle(x, y, r, cx, cy, cr);
-            // Reset
-            if (y > height + 50) {
-                x = random(width);
-                y = random(-height, -50);
-            }
+    function update() {
+        y += speed;
+        hit = circleCircle(x, y, r, cx, cy, cr);
+        // Reset
+        if (y > height + 50) {
+            x = random(width);
+            y = random(-height, -50);
         }
+    }
 
-        function display() {
-            if (!hit) fill(0, 150, 255, 150);
-            else fill(255, 150, 0, 150);
-            noStroke();
-            ellipse(x, y, r * 2, r * 2);
-        }
+    function display() {
+        if (!hit) fill(0, 150, 255, 150);
+        else fill(255, 150, 0, 150);
+        noStroke();
+        ellipse(x, y, r * 2, r * 2);
+    }
 
-        return {
-            update: update,
-            display: display
-        };
-    })();
+    return {
+        update: update,
+        display: display
+    };
 }
 
 function Line() {
-    return (function() {
-        var x1 = random(width);
-        var y1 = random(-height, height);
-        var x2 = x1 + random(-20, 20);
-        var y2 = y1 + random(-20, 20);
-        var speed = random(0.5, 2);
-        var hit = false;
+    var x1 = random(width);
+    var y1 = random(-height, height);
+    var x2 = x1 + random(-20, 20);
+    var y2 = y1 + random(-20, 20);
+    var speed = random(0.5, 2);
+    var hit = false;
 
-        function update() {
-            y1 += speed;
-            y2 += speed;
-            hit = lineCircle(x1, y1, x2, y2, cx, cy, cr);
-            // Reset
-            if (y1 > height + 50 && y2 > height + 50) {
-                x1 = random(width);
-                y1 = random(-height, -50);
-                x2 = x1 + random(-20, 20);
-                y2 = y1 + random(-20, 20);
-            }
+    function update() {
+        y1 += speed;
+        y2 += speed;
+        hit = lineCircle(x1, y1, x2, y2, cx, cy, cr);
+        // Reset
+        if (y1 > height + 50 && y2 > height + 50) {
+            x1 = random(width);
+            y1 = random(-height, -50);
+            x2 = x1 + random(-20, 20);
+            y2 = y1 + random(-20, 20);
         }
+    }
 
-        function display() {
-            if (!hit) stroke(0, 150, 255, 150);
-            else stroke(255, 150, 0, 150);
-            strokeWeight(5);
-            line(x1, y1, x2, y2);
-            console.log(x1, y1, x2, y2);
-        }
+    function display() {
+        if (!hit) stroke(0, 150, 255, 150);
+        else stroke(255, 150, 0, 150);
+        strokeWeight(5);
+        line(x1, y1, x2, y2);
+    }
 
-        return {
-            update: update,
-            display: display
-        };
-    })();
+    return {
+        update: update,
+        display: display
+    };
 }
 
 function Rectangle() {
-    return (function() {
-        var x = random(width);
-        var y = random(-height, height);
-        var w = random(8, 20);
-        var h = random(8, 20);
-        var speed = random(0.5, 2);
-        var hit = false;
+    var x = random(width);
+    var y = random(-height, height);
+    var w = random(8, 20);
+    var h = random(8, 20);
+    var speed = random(0.5, 2);
+    var hit = false;
 
-        function update() {
-            y += speed;
-            hit = circleRect(cx, cy, cr, x, y, w, h);
-            // Reset
-            if (y > height + 50) {
-                x = random(width);
-                y = random(-height, -50);
-            }
+    function update() {
+        y += speed;
+        hit = circleRect(cx, cy, cr, x, y, w, h);
+        // Reset
+        if (y > height + 50) {
+            x = random(width);
+            y = random(-height, -50);
         }
+    }
 
-        function display() {
-            if (!hit) fill(0, 150, 255, 150);
-            else fill(255, 150, 0, 150);
-            noStroke();
-            rect(x, y, w, h);
-        }
+    function display() {
+        if (!hit) fill(0, 150, 255, 150);
+        else fill(255, 150, 0, 150);
+        noStroke();
+        rect(x, y, w, h);
+    }
 
-        return {
-            update: update,
-            display: display
-        };
-    })();
+    return {
+        update: update,
+        display: display
+    };
 }
 
 /* --- COLLISION FUNCTIONS --- */

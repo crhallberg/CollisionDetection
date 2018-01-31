@@ -8,57 +8,64 @@ Why? Let's say we have a circle and a bunch of rectangles (like above). We could
 Let's start with our Circle class:
 
 ```javascript
-	class Circle {
-	  float x, y;    // position
-	  float r;       // radius
+var Circle = function(_x, _y, _r) {
+    var x = _x;
+    var y = _y;
+    var r = _r;
 
-	  Circle (float _x, float _y, float _r) {
-	    x = _x;
-	    y = _y;
-	    r = _r;
-	  }
+    function update() {
+        this.x = mouseX;
+        this.y = mouseY;
+    }
 
-	  // move into mouse position
-	  void update() {
-	    x = mouseX;
-	    y = mouseY;
-	  }
+    function display() {
+        fill(0, 150);
+        noStroke();
+        ellipse(this.x, this.y, this.r * 2, this.r * 2);
+    }
 
-	  // draw
-	  void display() {
-	    fill(0, 150);
-	    noStroke();
-	    ellipse(x,y, r*2, r*2);
-	  }
-	}
+    // make these parts public:
+    return {
+        x,
+        y,
+        r,
+        update,
+        display
+    };
+};
 ```
 
 Pretty straightforward. We can also make a basic Rectangle class:
 
 ```javascript
-function Rectangle(_x, _y, _w, _h) {
-    return (function() {
-        var x = _x;
-        var y = _y;
-        var w = _w;
-        var h = _h;
-        var hit = false;
+var Rectangle = function(_x, _y, _w, _h) {
+    var x = _x;
+    var y = _y;
+    var w = _w;
+    var h = _h;
+    var hit = false;
 
-        // draw the rectangle
-        // if hit, change the fill color
-        function display() {
-            if (hit) fill(255, 150, 0);
-            else fill(0, 150, 255);
-            noStroke();
-            rect(x, y, w, h);
-        }
+    // check for collision with the circle using the
+    // Circle/Rect function we made in the beginning
+    function checkCollision(c) {
+        this.hit = circleRect(c.x, c.y, c.r, x, y, w, h);
+    }
 
-        return {
-            checkCollision: checkCollision,
-            display: display,
-        };
-    })();
-}
+    // draw the rectangle
+    // if hit, change the fill color
+    function display() {
+        if (this.hit) fill(255, 150, 0);
+        else fill(0, 150, 255);
+        noStroke();
+        rect(x, y, w, h);
+    }
+
+    // make these parts public:
+    return {
+        checkCollision,
+        display: display
+    };
+};
 ```
 
 Notice we have a variable for the Rectangle called `hit`. This way we can keep track of whether or not the circle has hit a particular rectangle and change its fill color accordingly. By default, the value is set to `false`.
@@ -71,7 +78,6 @@ function draw() {
 
     // go through all rectangles...
     for (var i = 0; i < rects.length; i++) {
-        rects[i].checkCollision(mouseCircle); // check for collision
         rects[i].display(); // and draw
     }
 
@@ -84,17 +90,20 @@ function draw() {
 So how do we test if the circle has hit something? Let's create a *method* (an internal function) of the Rectangle class called `checkCollision()`. We'll pass the `Circle` object as an argument, then do a basic [Circle/Rectangle](circle-rect.php) collision test.
 
 ```javascript
+// check for collision with the circle using the
+// Circle/Rect function we made in the beginning
 function checkCollision(c) {
-    hit = circleRect(c.x, c.y, c.r, x, y, w, h);
+    this.hit = circleRect(c.x, c.y, c.r, x, y, w, h);
 }
 ```
 
 The result of `circleRect()` sets `hit` to be `true` or `false`, which in turn changes the fill color. Now we just add the test to the `draw()` loop:
 
 ```javascript
-for (Rectangle r : rects) {
-    r.checkCollision(circle);  // check for collision
-    r.display();               // and draw
+// go through all rectangles...
+for (var i = 0; i < rects.length; i++) {
+    rects[i].checkCollision(mouseCircle); // check for collision
+    rects[i].display(); // and draw
 }
 ```
 

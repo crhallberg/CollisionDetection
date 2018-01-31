@@ -9,14 +9,14 @@ function setup() {
     canvas.parent("sketch");
 
     // create a new Circle with 30px radius
-    mouseCircle = Circle(0, 0, 30);
+    mouseCircle = new Circle(0, 0, 30);
 
     // generate rectangles in random locations
     // but snap to grid!
     for (var i = 0; i < rects.length; i++) {
         var x = round(random(50, width - 50) / 50) * 50;
         var y = round(random(50, height - 50) / 50) * 50;
-        rects[i] = Rectangle(x, y, 50, 50);
+        rects[i] = new Rectangle(x, y, 50, 50);
     }
 }
 
@@ -24,9 +24,8 @@ function draw() {
     background(255);
 
     // go through all rectangles...
-    var c = mouseCircle.get();
     for (var i = 0; i < rects.length; i++) {
-        rects[i].checkCollision(c); // check for collision
+        rects[i].checkCollision(mouseCircle); // check for collision
         rects[i].display(); // and draw
     }
 
@@ -36,70 +35,60 @@ function draw() {
 }
 
 // Circle class
-function Circle(_x, _y, _r) {
-    return (function() {
-        var x = _x;
-        var y = _y;
-        var r = _r;
+var Circle = function(_x, _y, _r) {
+    var x = _x;
+    var y = _y;
+    var r = _r;
 
-        function get() {
-            return {
-                x: x,
-                y: y,
-                r: r,
-            };
-        }
+    function update() {
+        this.x = mouseX;
+        this.y = mouseY;
+    }
 
-        function update() {
-            x = mouseX;
-            y = mouseY;
-        }
+    function display() {
+        fill(0, 150);
+        noStroke();
+        ellipse(this.x, this.y, this.r * 2, this.r * 2);
+    }
 
-        function display() {
-            fill(0, 150);
-            noStroke();
-            ellipse(x, y, r * 2, r * 2);
-        }
-
-        // make these parts public:
-        return {
-            get: get,
-            update: update,
-            display: display,
-        };
-    })();
-}
+    // make these parts public:
+    return {
+        x,
+        y,
+        r,
+        update,
+        display
+    };
+};
 
 // Rectangle class
-function Rectangle(_x, _y, _w, _h) {
-    return (function() {
-        var x = _x;
-        var y = _y;
-        var w = _w;
-        var h = _h;
-        var hit = false;
+var Rectangle = function(_x, _y, _w, _h) {
+    var x = _x;
+    var y = _y;
+    var w = _w;
+    var h = _h;
+    var hit = false;
 
-        // check for collision with the circle using the
-        // Circle/Rect function we made in the beginning
-        function checkCollision(c) {
-            hit = circleRect(c.x, c.y, c.r, x, y, w, h);
-        }
+    // check for collision with the circle using the
+    // Circle/Rect function we made in the beginning
+    function checkCollision(c) {
+        this.hit = circleRect(c.x, c.y, c.r, x, y, w, h);
+    }
 
-        // draw the rectangle
-        // if hit, change the fill color
-        function display() {
-            if (hit) fill(255, 150, 0);
-            else fill(0, 150, 255);
-            noStroke();
-            rect(x, y, w, h);
-        }
+    // draw the rectangle
+    // if hit, change the fill color
+    function display() {
+        if (this.hit) fill(255, 150, 0);
+        else fill(0, 150, 255);
+        noStroke();
+        rect(x, y, w, h);
+    }
 
-        return {
-            checkCollision: checkCollision,
-            display: display,
-        };
-    })();
-}
+    return {
+        checkCollision,
+        display: display
+    };
+};
 
 // CIRCLE/RECTANGLE
 function circleRect(cx, cy, radius, rx, ry, rw, rh) {
