@@ -1,7 +1,7 @@
-
 <figcaption>Use your mouse to collide the two points!</figcaption>
 
 # POINT/POINT
+
 The easiest collision to test is between two points. To test if they are touching, we simply check to see if their X and Y coordinates are the same!
 
     if (x1 == x2 && y1 == y2) {
@@ -32,7 +32,7 @@ With our very first collision detection function in hand, we can build a useful 
     void setup() {
       size(600, 400);
       noCursor();
-      
+
       strokeWeight(5);    // thicker stroke = easier to see
     }
 
@@ -48,7 +48,7 @@ With our very first collision detection function in hand, we can build a useful 
       boolean colliding = pointPoint(px, py, targetX, targetY);
       if (colliding) {
         background(255, 150, 0);
-      } 
+      }
       else {
         background(255);
       }
@@ -56,7 +56,7 @@ With our very first collision detection function in hand, we can build a useful 
       // draw the two points
       stroke(0,150,255);
       point(targetX, targetY);
-      
+
       stroke(0,150);
       point(px, py);
     }
@@ -64,7 +64,7 @@ With our very first collision detection function in hand, we can build a useful 
 
     // POINT/POINT
     boolean pointPoint(float x1, float y1, float x2, float y2) {
-      
+
       // are the two points in the same location?
       if (x1 == x2 && y1 == y2) {
         return true;
@@ -72,4 +72,4 @@ With our very first collision detection function in hand, we can build a useful 
       return false;
     }
 
-Congrats, you've written your first program using collision! This basic structure will be the same in all the examples we'll build.  Of course, we could add some improvements to this algorithm. Try the [challenge prompts](section_1_challenges.php) at the end of this section and see if you can make it work better.
+Congrats, you've written your first program using collision! This basic structure will be the same in all the examples we'll build. Of course, we could add some improvements to this algorithm. Try the [challenge prompts](section_1_challenges.php) at the end of this section and see if you can make it work better.
