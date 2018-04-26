@@ -49,6 +49,14 @@ function pointCircle(px,py, cx,cy,r) {
     // using the Pythagorean Theorem
     var distX = px - cx;
     var distY = py - cy;
+
+    // this is an optional optimization since sqrt is so expensive
+    // if the horizontal or vertical component alone exceeds the radius
+    // stop here
+    if (Math.abs(distX) > r || Math.abs(distY) > r) {
+        return false;
+    }
+
     var distance = sqrt( (distX*distX) + (distY*distY) );
 
     // if the distance is less than the circle's
