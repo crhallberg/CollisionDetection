@@ -36,99 +36,90 @@ function draw() {
 
 /* --- SHAPE OBJECTS --- */
 
-function Circle() {
-    var x = random(width);
-    var y = random(-height, height);
-    var r = random(8, 20);
-    var speed = random(0.5, 2);
-    var hit = false;
+class Circle {
+    constructor() {
+        this.x = random(width);
+        this.y = random(-height, height);
+        this.r = random(8, 20);
+        this.speed = random(0.5, 2);
+        this.hit = false;
+    }
 
-    function update() {
-        y += speed;
-        hit = circleCircle(x, y, r, cx, cy, cr);
+    update() {
+        this.y += this.speed;
+        this.hit = circleCircle(this.x, this.y, this.r, cx, cy, cr);
         // Reset
-        if (y > height + 50) {
-            x = random(width);
-            y = random(-height, -50);
+        if (this.y > height + 50) {
+            this.x = random(width);
+            this.y = random(-height, -50);
         }
     }
 
-    function display() {
-        if (!hit) fill(0, 150, 255, 150);
+    display() {
+        if (!this.hit) fill(0, 150, 255, 150);
         else fill(255, 150, 0, 150);
         noStroke();
-        ellipse(x, y, r * 2, r * 2);
+        ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
-
-    return {
-        update: update,
-        display: display
-    };
 }
 
-function Line() {
-    var x1 = random(width);
-    var y1 = random(-height, height);
-    var x2 = x1 + random(-20, 20);
-    var y2 = y1 + random(-20, 20);
-    var speed = random(0.5, 2);
-    var hit = false;
+class Line {
+    constructor() {
+        this.x1 = random(width);
+        this.y1 = random(-height, height);
+        this.x2 = this.x1 + random(-20, 20);
+        this.y2 = this.y1 + random(-20, 20);
+        this.speed = random(0.5, 2);
+        this.hit = false;
+    }
 
-    function update() {
-        y1 += speed;
-        y2 += speed;
-        hit = lineCircle(x1, y1, x2, y2, cx, cy, cr);
+    update() {
+        this.y1 += this.speed;
+        this.y2 += this.speed;
+        this.hit = lineCircle(this.x1, this.y1, this.x2, this.y2, cx, cy, cr);
         // Reset
-        if (y1 > height + 50 && y2 > height + 50) {
-            x1 = random(width);
-            y1 = random(-height, -50);
-            x2 = x1 + random(-20, 20);
-            y2 = y1 + random(-20, 20);
+        if (this.y1 > height + 50 && this.y2 > height + 50) {
+            this.x1 = random(width);
+            this.y1 = random(-height, -50);
+            this.x2 = this.x1 + random(-20, 20);
+            this.y2 = this.y1 + random(-20, 20);
         }
     }
 
-    function display() {
-        if (!hit) stroke(0, 150, 255, 150);
+    display() {
+        if (!this.hit) stroke(0, 150, 255, 150);
         else stroke(255, 150, 0, 150);
         strokeWeight(5);
-        line(x1, y1, x2, y2);
+        line(this.x1, this.y1, this.x2, this.y2);
     }
-
-    return {
-        update: update,
-        display: display
-    };
 }
 
-function Rectangle() {
-    var x = random(width);
-    var y = random(-height, height);
-    var w = random(8, 20);
-    var h = random(8, 20);
-    var speed = random(0.5, 2);
-    var hit = false;
+class Rectangle {
+    constructor() {
+        this.x = random(width);
+        this.y = random(-height, height);
+        this.w = random(8, 20);
+        this.h = random(8, 20);
+        this.speed = random(0.5, 2);
+        this.hit = false;
+    }
 
-    function update() {
-        y += speed;
-        hit = circleRect(cx, cy, cr, x, y, w, h);
+    update() {
+        this.y += this.speed;
+        this.hit = circleRect(cx, cy, cr, this.x, this.y, this.w, this.h);
         // Reset
-        if (y > height + 50) {
-            x = random(width);
-            y = random(-height, -50);
+        if (this.y > height + 50) {
+            this.x = random(width);
+            this.y = random(-height, -50);
         }
     }
 
-    function display() {
-        if (!hit) fill(0, 150, 255, 150);
+    display() {
+        if (!this.hit) fill(0, 150, 255, 150);
         else fill(255, 150, 0, 150);
         noStroke();
-        rect(x, y, w, h);
+        rect(this.x, this.y, this.w, this.h);
     }
-
-    return {
-        update: update,
-        display: display
-    };
 }
 
 /* --- COLLISION FUNCTIONS --- */

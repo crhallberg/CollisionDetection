@@ -35,60 +35,50 @@ function draw() {
 }
 
 // Circle class
-var Circle = function(_x, _y, _r) {
-    var x = _x;
-    var y = _y;
-    var r = _r;
+class Circle {
+    constructor(_x, _y, _r) {
+        this.x = _x;
+        this.y = _y;
+        this.r = _r;
+    }
 
-    function update() {
+    update() {
         this.x = mouseX;
         this.y = mouseY;
     }
 
-    function display() {
+    display() {
         fill(0, 150);
         noStroke();
         ellipse(this.x, this.y, this.r * 2, this.r * 2);
     }
-
-    // make these parts public:
-    return {
-        x,
-        y,
-        r,
-        update,
-        display
-    };
-};
+}
 
 // Rectangle class
-var Rectangle = function(_x, _y, _w, _h) {
-    var x = _x;
-    var y = _y;
-    var w = _w;
-    var h = _h;
-    var hit = false;
+class Rectangle {
+    constructor(_x, _y, _w, _h) {
+        this.x = _x;
+        this.y = _y;
+        this.w = _w;
+        this.h = _h;
+        this.hit = false;
+    }
 
     // check for collision with the circle using the
     // Circle/Rect function we made in the beginning
-    function checkCollision(c) {
-        this.hit = circleRect(c.x, c.y, c.r, x, y, w, h);
+    checkCollision(c) {
+        this.hit = circleRect(c.x, c.y, c.r, this.x, this.y, this.w, this.h);
     }
 
     // draw the rectangle
     // if hit, change the fill color
-    function display() {
+    display() {
         if (this.hit) fill(255, 150, 0);
         else fill(0, 150, 255);
         noStroke();
-        rect(x, y, w, h);
+        rect(this.x, this.y, this.w, this.h);
     }
-
-    return {
-        checkCollision,
-        display: display
-    };
-};
+}
 
 // CIRCLE/RECTANGLE
 function circleRect(cx, cy, radius, rx, ry, rw, rh) {

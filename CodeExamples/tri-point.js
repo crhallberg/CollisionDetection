@@ -50,7 +50,8 @@ function triPoint(x1, y1, x2, y2, x3, y3, px, py) {
 
     // if the sum of the three areas equals the original,
     // we're inside the triangle!
-    if (area1 + area2 + area3 == areaOrig) {
+    // (< 1 due to floating point issues in Javascript)
+    if (Math.abs((area1 + area2 + area3) - areaOrig) < 1) {
         return true;
     }
     return false;
