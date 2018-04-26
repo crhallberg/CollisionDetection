@@ -1,6 +1,5 @@
 const marky = require("marky-markdown"),
-    butternut = require("butternut"),
-    fs = require("fs");
+      fs = require("fs");
 
 const order = [
     "index",
@@ -48,7 +47,7 @@ fs.readdir("MarkdownFiles", function(err, files) {
         if (codeExists) {
             code = fs.readFileSync("CodeExamples/" + name + ".js", "utf8").trim();
         }
-        console.log(" + " + name, codeExists);
+        console.log(" + " + name, codeExists ? "(with code)" : "");
         const text = fs.readFileSync("MarkdownFiles/" + files[i], "utf8");
         const markdown = marky(
             // remove canvas parenting from displayed code
@@ -70,6 +69,9 @@ fs.readdir("MarkdownFiles", function(err, files) {
             next = '<a href="' + order[orderIndex + 1] + '.html" id="next">&rarr;</a>';
         }
         // Write through template
+        if (codeExists) {
+            code += "document.getElementById('sketch').removeAttribute('hidden');";
+        }
         const html = template
             .replace("{{ prev }}", prev)
             .replace("{{ next }}", next)
@@ -77,5 +79,4 @@ fs.readdir("MarkdownFiles", function(err, files) {
             .replace("{{ code }}", code);
         fs.writeFileSync("Website_Test/" + name + ".html", html, "utf8");
     }
-    console.log("---");
 });
