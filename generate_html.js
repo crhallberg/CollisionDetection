@@ -1,6 +1,8 @@
 const marky = require("marky-markdown"),
       fs = require("fs");
 
+const DEST_FOLDER = "Website/"
+
 const order = [
     "index",
     "table_of_contents",
@@ -77,6 +79,6 @@ fs.readdir("MarkdownFiles", function(err, files) {
             .replace("{{ next }}", next)
             .replace("{{ markdown }}", markdown)
             .replace("{{ code }}", code);
-        fs.writeFileSync("Website_Test/" + name + ".html", html, "utf8");
+        fs.writeFileSync(DEST_FOLDER + name + ".html", html, "utf8");
     }
 });

@@ -1,0 +1,465 @@
+.editor {
+  background-color: #f7f3ee;
+  color: #625B50;
+}
+.editor .wrap-guide {
+  background-color: #EAE2D7;
+}
+.editor .indent-guide {
+  color: #EAE2D7;
+}
+.editor .invisible-character {
+  color: #EAE2D7;
+}
+.editor .gutter {
+  background-color: #F1EBE4;
+  color: #A99A84;
+}
+.editor .gutter .line-number.cursor-line {
+  background-color: #EAE2D7;
+  color: #625B50;
+}
+.editor .gutter .line-number.cursor-line-no-selection {
+  color: #625B50;
+}
+.editor .gutter .line-number.folded,
+.editor .gutter .line-number:after,
+.editor .fold-marker:after {
+  color: #A99A84;
+}
+.editor .invisible {
+  color: #625B50;
+}
+.editor .cursor {
+  color: #714EDA;
+}
+.editor .selection .region {
+  background-color: #EAE2D7;
+}
+.editor .bracket-matcher .region {
+  border-bottom: 2px solid #714EDA;
+  position: absolute;
+}
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
+.orange {
+  color: #5b5245;
+  background: rgba(242, 165, 60, 0.25);
+}
+.green {
+  color: #51553F;
+  background: rgba(155, 202, 20, 0.25);
+}
+.blue {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.purple {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.reset {
+  color: inherit;
+  background: none;
+}
+.reset-all .string.quoted,
+.reset-all .string.punctuation,
+.reset-all .string.regexp,
+.reset-all .numeric,
+.reset-all .boolean,
+.reset-all .constant.keyword,
+.reset-all .constant.symbol,
+.reset-all .constant .punctuation.definition,
+.reset-all .nil {
+  color: inherit;
+  background: none;
+}
+.comment.block,
+.comment.line {
+  color: #5b5245;
+  background: rgba(242, 165, 60, 0.25);
+  display: inline-block;
+  font-style: italic;
+}
+.comment.block .comment.punctuation,
+.comment.line .comment.punctuation {
+  color: #A78B65;
+  background: none;
+}
+.string.regexp,
+.string.quoted {
+  color: #51553F;
+  background: rgba(155, 202, 20, 0.25);
+}
+.string.regexp .punctuation.definition,
+.string.quoted .punctuation.definition,
+.string.regexp .punctuation.string,
+.string.quoted .punctuation.string {
+  color: #8C9563;
+}
+.string.regexp .embedded .string.quoted,
+.string.quoted .embedded .string.quoted,
+.string.regexp .embedded .string.punctuation,
+.string.quoted .embedded .string.punctuation,
+.string.regexp .embedded .string.regexp,
+.string.quoted .embedded .string.regexp,
+.string.regexp .embedded .numeric,
+.string.quoted .embedded .numeric,
+.string.regexp .embedded .boolean,
+.string.quoted .embedded .boolean,
+.string.regexp .embedded .constant.keyword,
+.string.quoted .embedded .constant.keyword,
+.string.regexp .embedded .constant.symbol,
+.string.quoted .embedded .constant.symbol,
+.string.regexp .embedded .constant .punctuation.definition,
+.string.quoted .embedded .constant .punctuation.definition,
+.string.regexp .embedded .nil,
+.string.quoted .embedded .nil {
+  color: inherit;
+  background: none;
+}
+.string.regexp .regexp,
+.string.quoted .regexp {
+  color: inherit;
+  background: none;
+}
+.constant.symbol,
+.constant.keyword,
+.constant.numeric,
+.constant.boolean,
+.constant.null,
+.constant.nil {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.constant.symbol .punctuation.definition,
+.constant.keyword .punctuation.definition,
+.constant.numeric .punctuation.definition,
+.constant.boolean .punctuation.definition,
+.constant.null .punctuation.definition,
+.constant.nil .punctuation.definition {
+  color: #7992A6;
+}
+.keyword.control {
+  font-weight: bold;
+}
+.html .meta.tag .entity.name {
+  font-weight: bold;
+}
+.html .meta.tag .entity.attribute-name {
+  font-style: italic;
+}
+.html .meta.tag .punctuation.definition.tag {
+  color: #A99A84;
+}
+.source.clojure .storage.control {
+  font-weight: bold;
+}
+.source.clojure .meta.definition .entity.global {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.clojure .meta.metadata {
+  font-style: italic;
+}
+.source.clojure .meta.metadata .string.quoted,
+.source.clojure .meta.metadata .string.punctuation,
+.source.clojure .meta.metadata .string.regexp,
+.source.clojure .meta.metadata .numeric,
+.source.clojure .meta.metadata .boolean,
+.source.clojure .meta.metadata .constant.keyword,
+.source.clojure .meta.metadata .constant.symbol,
+.source.clojure .meta.metadata .constant .punctuation.definition,
+.source.clojure .meta.metadata .nil {
+  color: inherit;
+  background: none;
+}
+.source.clojure .punctuation.expression {
+  color: #A99A84;
+}
+.source.css .meta.selector .entity.name.tag,
+.source.css .class:not(.mixin) {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.css .constant.support {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.source.css .keyword {
+  color: inherit;
+  background: none;
+}
+.source.css .rgb-value {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.source.css .bracket.curly {
+  color: #A99A84;
+}
+.source.css .punctuation.separator,
+.source.css .punctuation.terminator {
+  color: #A99A84;
+}
+.source.css .comment .class {
+  color: inherit;
+  background: none;
+  font-weight: bold;
+}
+.source.elixir .entity.name.function {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.elixir .constant.language {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.source.elixir.embedded .constant.language {
+  color: inherit;
+  background: none;
+}
+.source.elm .entity.name.function {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.elm .meta.import .entity.name.function {
+  color: inherit;
+  background: none;
+}
+.source.elm .keyword.other:not(.colon):not(.arrow) {
+  font-weight: bold;
+}
+.source.gfm .markup.heading {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+  display: inline-block;
+}
+.source.gfm .markup.heading .markup {
+  background: none;
+  color: #A984A7;
+}
+.source.gfm .markup.italic {
+  font-style: italic;
+}
+.source.gfm .markup.bold {
+  font-weight: bold;
+}
+.source.gfm .markup.strike {
+  text-decoration: line-through;
+}
+.source.gfm .markup.code,
+.source.gfm .markup.raw {
+  display: inline-block;
+  color: #5b5245;
+  background: rgba(242, 165, 60, 0.25);
+}
+.source.gfm .markup.code .support,
+.source.gfm .markup.raw .support {
+  color: #5b5245;
+}
+.source.gfm .markup.code .source.embedded *,
+.source.gfm .markup.raw .source.embedded * {
+  color: inherit;
+  background: none;
+}
+.source.gfm .comment {
+  display: inline-block;
+  font-style: normal;
+  color: #51553F;
+  background: rgba(155, 202, 20, 0.25);
+}
+.source.gfm .comment .link,
+.source.gfm .comment .link .punctuation.definition,
+.source.gfm .comment .comment {
+  color: inherit;
+  background: none;
+}
+.source.gfm .comment .support.quote {
+  color: #8C9563;
+}
+.source.gfm .link {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.source.gfm .link .link {
+  color: inherit;
+  background: none;
+}
+.source.gfm .link .punctuation.definition {
+  color: #7992A6;
+}
+.haml .meta.tag {
+  font-weight: bold;
+}
+.haml .meta.tag .punctuation.definition.tag {
+  color: #A99A84;
+}
+.haml .meta.line.ruby {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.haml .meta.line.ruby .string.regexp,
+.haml .meta.line.ruby .string.quoted {
+  color: inherit;
+  background: none;
+}
+.haml .meta.line.ruby .string.regexp .punctuation.definition,
+.haml .meta.line.ruby .string.quoted .punctuation.definition,
+.haml .meta.line.ruby .string.regexp .punctuation.string,
+.haml .meta.line.ruby .string.quoted .punctuation.string {
+  color: inherit;
+}
+.haml .constant.symbol {
+  color: inherit;
+  background: none;
+}
+.source.js .meta.function .entity.name.function {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.js .meta.function .storage.function {
+  font-weight: bold;
+}
+.source.js .constant.key {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.source.js .variable.this {
+  font-style: italic;
+}
+.source.js .storage.var {
+  font-weight: bold;
+}
+.source.jsx .entity.name.class {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.jsx .storage.type {
+  font-weight: bold;
+}
+.source.jsx .meta.function-call .entity.name.function,
+.source.jsx .meta.method-call .entity.name.function {
+  color: inherit;
+  background: none;
+}
+.source.jsx .meta.tag .entity.name.tag {
+  font-weight: bold;
+}
+.source.jsx .meta.tag .punctuation.definition.tag {
+  color: #A99A84;
+}
+.source.json .string.quoted {
+  color: inherit;
+  background: none;
+}
+.source.json .string.quoted .punctuation.definition,
+.source.json .string.quoted .punctuation.string {
+  color: #A99A84;
+}
+.source.json .punctuation.separator {
+  color: #A99A84;
+}
+.text.php .entity.name.class,
+.text.php .entity.name.function {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.text.php .constant.language {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.text.php .storage.class,
+.text.php .storage.function {
+  font-weight: bold;
+}
+.text.php .punctuation.terminator.expression {
+  color: #A99A84;
+}
+.source.python .entity.name.class,
+.source.python .entity.name.function {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.python .constant.language {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.source.python .variable.self {
+  font-style: italic;
+}
+.source.ruby .meta .class.name,
+.source.ruby .meta .function.name {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.source.ruby .name.module {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
+.html.ruby .rails.embedded,
+.html.erb .rails.embedded,
+.html.ruby .meta.embedded,
+.html.erb .meta.embedded {
+  color: #485561;
+  background: rgba(115, 185, 255, 0.25);
+}
+.html.ruby .rails.embedded .string.quoted,
+.html.erb .rails.embedded .string.quoted,
+.html.ruby .meta.embedded .string.quoted,
+.html.erb .meta.embedded .string.quoted,
+.html.ruby .rails.embedded .string.punctuation,
+.html.erb .rails.embedded .string.punctuation,
+.html.ruby .meta.embedded .string.punctuation,
+.html.erb .meta.embedded .string.punctuation,
+.html.ruby .rails.embedded .string.regexp,
+.html.erb .rails.embedded .string.regexp,
+.html.ruby .meta.embedded .string.regexp,
+.html.erb .meta.embedded .string.regexp,
+.html.ruby .rails.embedded .numeric,
+.html.erb .rails.embedded .numeric,
+.html.ruby .meta.embedded .numeric,
+.html.erb .meta.embedded .numeric,
+.html.ruby .rails.embedded .boolean,
+.html.erb .rails.embedded .boolean,
+.html.ruby .meta.embedded .boolean,
+.html.erb .meta.embedded .boolean,
+.html.ruby .rails.embedded .constant.keyword,
+.html.erb .rails.embedded .constant.keyword,
+.html.ruby .meta.embedded .constant.keyword,
+.html.erb .meta.embedded .constant.keyword,
+.html.ruby .rails.embedded .constant.symbol,
+.html.erb .rails.embedded .constant.symbol,
+.html.ruby .meta.embedded .constant.symbol,
+.html.erb .meta.embedded .constant.symbol,
+.html.ruby .rails.embedded .constant .punctuation.definition,
+.html.erb .rails.embedded .constant .punctuation.definition,
+.html.ruby .meta.embedded .constant .punctuation.definition,
+.html.erb .meta.embedded .constant .punctuation.definition,
+.html.ruby .rails.embedded .nil,
+.html.erb .rails.embedded .nil,
+.html.ruby .meta.embedded .nil,
+.html.erb .meta.embedded .nil {
+  color: inherit;
+  background: none;
+}
+.html.ruby .rails.embedded .punctuation.section.embedded,
+.html.erb .rails.embedded .punctuation.section.embedded,
+.html.ruby .meta.embedded .punctuation.section.embedded,
+.html.erb .meta.embedded .punctuation.section.embedded {
+  color: #7992A6;
+}
+.html.ruby .string.quoted .embedded,
+.html.erb .string.quoted .embedded {
+  color: inherit;
+  background: none;
+}
+.html.ruby .string.quoted .embedded .punctuation.section,
+.html.erb .string.quoted .embedded .punctuation.section {
+  color: inherit;
+}
+.source.rust .entity.name.class,
+.source.rust .entity.name.function {
+  color: #664B64;
+  background: rgba(220, 155, 250, 0.25);
+}
