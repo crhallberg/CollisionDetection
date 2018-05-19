@@ -65,7 +65,7 @@ class Rectangle {
 
 Notice we have a variable for the Rectangle called `hit`. This way we can keep track of whether or not the circle has hit a particular rectangle and change its fill color accordingly. By default, the value is set to `false`.
 
-We have just one `Circle`, but we create an `Array` of `Rectangle` objects. To run everything, here's what our main `draw()` loop looks like:
+We have just one `Circle`, but we create an Array of `Rectangle` objects. To run everything, here's what our main `draw()` loop looks like:
 
 ```javascript
 function draw() {
@@ -82,7 +82,7 @@ function draw() {
 }
 ```
 
-So how do we test if the circle has hit something? Let's create a *method* (an internal function) of the Rectangle class called `checkCollision()`. We'll pass the `Circle` object as an argument, then do a basic [Circle/Rectangle](circle-rect.php) collision test.
+So how do we test if the circle has hit something? Let's create a *method* (an internal function) of the Rectangle class called `checkCollision()`. We'll pass the `Circle` object as an argument, then do a basic [Circle/Rectangle](circle-rect.html) collision test.
 
 ```javascript
 // check for collision with the circle using the
@@ -108,4 +108,4 @@ Pretty cool! Here's the full code:
 {{ code }}
 ```
 
-You can see another, more complex example of object-oriented collision in the [Introduction](index.php). It uses a class for circles, rectangles, and lines.
+You can see another, more complex example of object-oriented collision in the [Introduction](index.html). It uses a class for circles, rectangles, and lines.

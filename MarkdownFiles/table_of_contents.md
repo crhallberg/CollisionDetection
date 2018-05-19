@@ -6,7 +6,7 @@
 ### PREAMBLE
 + [Introduction](index.html)
 + [License](license.html)
-+ [What You Should Already Know](what_you_should_already_know.md)
++ [What You Should Already Know](what_you_should_already_know.html)
 
 ### SECTION 1
 + [Point/Point](point-point.html)

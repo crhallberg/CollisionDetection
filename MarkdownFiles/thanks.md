@@ -3,12 +3,12 @@ All of this code is thanks to lots of help online and off. As much as possible, 
 
 Examples built from:
 
-+ [Circle/Rectangle](circle-rect.php) made from this example by [Matt Worden](http://vband3d.tripod.com/visualbasic/tut_mixedcollisions.htm)
-+ [Line/Point](line-point.php) via [this StackOverflow post](http://stackoverflow.com/a/17693146/1167783)
-+ [Line/Circle](line-circle.php) via [Philip Nicoletti](http://www.codeguru.com/forum/showthread.php?threadid=194400)
-+ [Line/Line](line-line.php) built from examples by [Paul Bourke](http://paulbourke.net/geometry/pointlineplane/) and [Ibackstrom](http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=geometry2)
++ [Circle/Rectangle](circle-rect.html) made from this example by [Matt Worden](http://vband3d.tripod.com/visualbasic/tut_mixedcollisions.htm)
++ [Line/Point](line-point.html) via [this StackOverflow post](http://stackoverflow.com/a/17693146/1167783)
++ [Line/Circle](line-circle.html) via [Philip Nicoletti](http://www.codeguru.com/forum/showthread.html?threadid=194400)
++ [Line/Line](line-line.html) built from examples by [Paul Bourke](http://paulbourke.net/geometry/pointlineplane/) and [Ibackstrom](http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=geometry2)
 + Too much time spent on [StackOverflow](http://www.stackoverflow.com)
-+ p5.js port of the original Processing tutorials by Chris Hallberg
++ p5.js port of the original Processing tutorials by [Chris Hallberg](https://crhallberg.com)
 
 Also a big "thank you" to:
 
