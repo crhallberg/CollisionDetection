@@ -14,17 +14,20 @@
   </head>
 
   <body>
-    <div id="wrapper">
-      <header>
+    <header>
+      <div class="flex">
         {{ prev }}
         <span id="title">
             <a href="index.html">Collision Detection</a><br/>
             <a href="table_of_contents.html"><small>Table of Contents</small></a>
         </span>
         {{ next }}
-      </header>
+      </div>
+    </header>
 
-      <div id="sketch" hidden></div>
+    <div id="sketch" hidden></div>
+
+    <div id="wrapper">
 
       <main>
         {{ markdown }}
