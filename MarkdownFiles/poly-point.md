@@ -57,7 +57,7 @@ if (
 There are two tests happening here. The first checks if the point is between the two vertices in the Y direction:
 
 ```javascript
-(vc.y > py && vn.y < py) || (vc.y < py && vn.y > py)
+(vc.y >= py && vn.y < py) || (vc.y < py && vn.y >= py)
 ```
 
 We test if the point is either above `vc.y` and below `vn.y`, or below `vc.y` and above `vn.y`. Here's what this looks like visually:
