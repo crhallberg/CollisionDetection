@@ -58,7 +58,7 @@ class Rectangle {
         if (this.hit) fill(255, 150, 0);
         else fill(0, 150, 255);
         noStroke();
-        rect(x, y, w, h);
+        rect(this.x, this.y, this.w, this.h);
     }
 }
 ```
