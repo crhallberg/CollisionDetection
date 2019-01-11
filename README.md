@@ -36,6 +36,6 @@ If you have any questions about what you can and can't do with these examples, p
 ---
 
 #### WHAT YOU SHOULD ALREADY KNOW  
-This book's examples are written in [Processing](http://www.processing.org), a wrapper for the Java programming language. While you need little programming experience to use these examples, you should understand how a basic Processing sketch is structured, how to use variables, how to draw shapes and get input from the mouse, and how `if/else` statements work. It may be helpful to understand using `PVector` objects to store positions, but we'll cover that a little bit if you haven't used them before. 
+This book's examples were written in [Processing](http://www.processing.org) (a wrapper for the Java programming language) by Jeff Thompson. It was ported to [p5.js](https://p5js.org) (a wrapper for Javascript) by Chris Hallberg. While you need little programming experience to use these examples, you should understand how a basic Processing sketch is structured, how to use variables, how to draw shapes and get input from the mouse, and how `if/else` statements work. It may be helpful to understand using `PVector` objects to store positions, but we'll cover that a little bit if you haven't used them before. 
 
 At the end, we will talk about using collision in object-oriented code. Understanding object-oriented programming will not be required to use this book, but it will be helpful for using these topics in larger projects.
